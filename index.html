@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/735ff7e9df.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="name">
+        <h1><a href="https://www.linkedin.com/in/aakash-rajput%F0%9F%87%AE%F0%9F%87%B3-064b361b4/" target="_blank">Aakash</a></h1>
+    </div>
+    <div class="wrapper">
+        <span>&#128514</span>
+        <p id="joke"></p>
+
+        <button id="btn">Get Jokes</button>
+    </div>
+
+    
+<!-- -----------------------------------------------JAVASCRIPT CODES---------------------------------------------------------------------- -->
+
+    
+<script>
+        const jokeContainer = document.getElementById("joke");
+const btn = document.getElementById("btn");
+const url = "https://v2.jokeapi.dev/joke/Any?blacklistFlags=nsfw,religious,political,racist,sexist,explicit&type=single";
+
+let getJoke = () => {
+    jokeContainer.classList.remove("fade");
+    fetch(url)
+    .then(data => data.json())
+    .then(item => {
+        // Check if the joke property exists
+        if (item.joke) {
+            jokeContainer.textContent = item.joke;
+        } else {
+            jokeContainer.textContent = "No joke available.";
+        }
+        jokeContainer.classList.add("fade");
+    })
+    .catch(error => {
+        jokeContainer.textContent = "Error fetching joke.";
+        console.error(error);
+    });
+}
+
+btn.addEventListener("click", getJoke);
+getJoke();
+</script>
+
+
+</body>
+</html>
