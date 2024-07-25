@@ -63,7 +63,8 @@ We welcome contributions from the community! If you'd like to enhance the Joke G
 5. Open a Pull Request.
 
 Your contributions help make this app even better!
-Here is the live link of the proeject: - https://j0kes-generator.netlify.app/
 ---
+
+Here is the live link of the project: - https://j0kes-generator.netlify.app/
 
 Thank you for checking out the Joke Generator Web App! We hope it brings a smile to your face. If you have any questions or feedback, please feel free to reach out. Happy coding!
